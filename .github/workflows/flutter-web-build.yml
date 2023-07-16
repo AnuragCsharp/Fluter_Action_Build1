@@ -14,16 +14,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '2.17.0'
-          channel: 'stable'
-
+          channel: 'dev'
       - run: flutter --version
 
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        
+      - name: checkout 
+        uses: subosito/flutter-action@v2
 
       - name: Install dependencies
         run: flutter pub get
